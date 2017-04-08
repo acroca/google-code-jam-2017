@@ -1,3 +1,5 @@
 *.in
 _build
 p*.txt
+deps
+gcj

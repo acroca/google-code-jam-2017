@@ -3,6 +3,8 @@ defmodule Gcj do
     problem = case probNum do
       "1" -> Gcj.Problem1
       "2" -> Gcj.Problem2
+      "3" -> Gcj.Problem3
+      "4" -> Gcj.Problem4
     end
 
     IO.puts IO.stream(:stdio, :line)
