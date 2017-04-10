@@ -31,28 +31,38 @@ defmodule Gcj.Problem3 do
   def last_bathroom({heap, counts} = data, n) do
     gap_size = Heap.root(heap)
     amount = Map.get(counts, gap_size)
-    if amount < n do
-      heap = Heap.pop(heap)
-      counts = Map.delete(counts, gap_size)
-      ls = lspots(gap_size)
-      rs = rspots(gap_size)
-      if (Map.get(counts, ls, 0) == 0) do
-        heap = Heap.push(heap, ls)
-      end
-      if rs != ls && Map.get(counts, rs, 0) == 0 do
-        heap = Heap.push(heap, rs)
-      end
-      counts = Map.update(counts, ls, amount, &(&1 + amount))
-      counts = Map.update(counts, rs, amount, &(&1 + amount))
-
-      last_bathroom({
-        heap,
-        counts
-      }, n - amount)
-    else
-      data
-    end
+    handle_step(data, n, gap_size, amount)
   end
+
+  def handle_step(data, n, _, amount) when amount >= n, do: data
+  def handle_step({heap, counts}, n, gap_size, amount) do
+    ls = lspots(gap_size)
+    rs = rspots(gap_size)
+
+    heap = heap
+    |> Heap.pop()
+    |> fix_heap_based_on_lcounts(ls, Map.get(counts, ls, 0))
+    |> fix_heap_based_on_rcounts(ls, rs, Map.get(counts, rs, 0))
+    counts = counts 
+    |> Map.delete(gap_size)
+    |> Map.update(ls, amount, &(&1 + amount))
+    |> Map.update(rs, amount, &(&1 + amount))
+
+    last_bathroom({
+      heap,
+      counts
+    }, n - amount)
+  end
+  def fix_heap_based_on_lcounts(heap, ls, 0) do
+    Heap.push(heap, ls)
+  end
+  def fix_heap_based_on_lcounts(heap, _, _), do: heap
+
+  def fix_heap_based_on_rcounts(heap, a, a, _), do: heap
+  def fix_heap_based_on_rcounts(heap, _, rs, 0) do
+    Heap.push(heap, rs)
+  end
+  def fix_heap_based_on_rcounts(heap, _, _, _), do: heap
 
   def reprocess_heap(heap) do
     heap

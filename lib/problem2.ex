@@ -17,7 +17,7 @@ defmodule Gcj.Problem2 do
   # end
 
   def process(n) do
-    res = tidy({Enum.reverse(n), []})
+    tidy({Enum.reverse(n), []})
     |> elem(1)
     |> Enum.map(&Integer.to_string(&1))
     |> Enum.join()

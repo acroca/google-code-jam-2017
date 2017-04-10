@@ -22,7 +22,7 @@ defmodule Gcj.Problem1 do
   def count(n, s) when byte_size(s)<n do
     :err
   end
-  def count(n, "-" <> rest = s) when byte_size(s)==n do
+  def count(n, "-" <> _ = s) when byte_size(s)==n do
     case count(n, flip(s, n)) do
       :err -> :err
       0 -> 1
