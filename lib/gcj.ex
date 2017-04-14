@@ -1,9 +1,9 @@
 defmodule Gcj do
   def main([probNum | _]) do
     problem = case probNum do
-      "1" -> Gcj.Problem1
-      "2" -> Gcj.Problem2
-      "3" -> Gcj.Problem3
+      "cr.1" -> Gcj.CR.Problem1
+      "cr.2" -> Gcj.CR.Problem2
+      "cr.3" -> Gcj.CR.Problem3
     end
 
     IO.puts IO.stream(:stdio, :line)

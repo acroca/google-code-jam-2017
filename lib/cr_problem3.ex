@@ -1,4 +1,4 @@
-defmodule Gcj.Problem3 do
+defmodule Gcj.CR.Problem3 do
   import Gcj, only: [parse!: 1]
 
   def parseInput(input) do
@@ -74,30 +74,30 @@ defmodule Gcj.Problem3 do
 
   @doc ~S"""
   ## Examples
-      iex> Gcj.Problem3.lspots 10
+      iex> Gcj.CR.Problem3.lspots 10
       5
-      iex> Gcj.Problem3.lspots 4
+      iex> Gcj.CR.Problem3.lspots 4
       2
-      iex> Gcj.Problem3.lspots 5
+      iex> Gcj.CR.Problem3.lspots 5
       2
-      iex> Gcj.Problem3.lspots 1
+      iex> Gcj.CR.Problem3.lspots 1
       0
-      iex> Gcj.Problem3.lspots 2
+      iex> Gcj.CR.Problem3.lspots 2
       1
   """
   def lspots(1), do: 0
   def lspots(size), do: round(Float.ceil((size-1)/2.0))
   @doc ~S"""
   ## Examples
-      iex> Gcj.Problem3.rspots 10
+      iex> Gcj.CR.Problem3.rspots 10
       4
-      iex> Gcj.Problem3.rspots 4
+      iex> Gcj.CR.Problem3.rspots 4
       1
-      iex> Gcj.Problem3.rspots 5
+      iex> Gcj.CR.Problem3.rspots 5
       2
-      iex> Gcj.Problem3.rspots 1
+      iex> Gcj.CR.Problem3.rspots 1
       0
-      iex> Gcj.Problem3.rspots 2
+      iex> Gcj.CR.Problem3.rspots 2
       0
   """
   def rspots(1), do: 0

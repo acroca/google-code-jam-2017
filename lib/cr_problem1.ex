@@ -1,4 +1,4 @@
-defmodule Gcj.Problem1 do
+defmodule Gcj.CR.Problem1 do
   import Gcj, only: [parse!: 1]
 
   def parseInput(input) do

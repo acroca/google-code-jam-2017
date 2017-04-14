@@ -1,8 +1,8 @@
-defmodule GcjTest1 do
-  @p Gcj.Problem1
+defmodule GcjCrTest1 do
+  @p Gcj.CR.Problem1
 
   use ExUnit.Case
-  doctest Gcj.Problem1
+  doctest Gcj.CR.Problem1
   import Gcj.TestMacros
 
   t @p, {3, "---+-++-"}, 3

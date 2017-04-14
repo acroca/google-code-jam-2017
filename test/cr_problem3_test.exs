@@ -1,8 +1,8 @@
-defmodule GcjTest3 do
-  @p Gcj.Problem3
+defmodule GcjCrTest3 do
+  @p Gcj.CR.Problem3
 
   use ExUnit.Case
-  doctest Gcj.Problem3
+  doctest Gcj.CR.Problem3
   import Gcj.TestMacros
 
   test "parsing line" do

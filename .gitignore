@@ -1,5 +1,5 @@
 *.in
 _build
-p*.txt
+*.txt
 deps
 gcj
