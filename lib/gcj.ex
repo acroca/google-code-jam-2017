@@ -4,6 +4,7 @@ defmodule Gcj do
       "cr.1" -> Gcj.CR.Problem1
       "cr.2" -> Gcj.CR.Problem2
       "cr.3" -> Gcj.CR.Problem3
+      "r1.1" -> Gcj.R1.Problem1
     end
 
     IO.puts IO.stream(:stdio, :line)
