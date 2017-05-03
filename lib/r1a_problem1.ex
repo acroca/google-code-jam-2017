@@ -1,4 +1,4 @@
-defmodule Gcj.R1.Problem1 do
+defmodule Gcj.R1A.Problem1 do
   import Gcj, only: [parse!: 1]
 
   def parseInput(input) do
@@ -43,15 +43,15 @@ defmodule Gcj.R1.Problem1 do
 
   @doc ~S"""
   ## Examples
-      iex> Gcj.R1.Problem1.fill_line ~w(? ? ?), nil
+      iex> Gcj.R1A.Problem1.fill_line ~w(? ? ?), nil
       ~w(? ? ?)
-      iex> Gcj.R1.Problem1.fill_line ~w(? ? ? A), nil
+      iex> Gcj.R1A.Problem1.fill_line ~w(? ? ? A), nil
       ~w(A A A A)
-      iex> Gcj.R1.Problem1.fill_line ~w(? ? ? A ?), nil
+      iex> Gcj.R1A.Problem1.fill_line ~w(? ? ? A ?), nil
       ~w(A A A A A)
-      iex> Gcj.R1.Problem1.fill_line ~w(? ? ? A ? B), nil
+      iex> Gcj.R1A.Problem1.fill_line ~w(? ? ? A ? B), nil
       ~w(A A A A A B)
-      iex> Gcj.R1.Problem1.fill_line ~w(? ? ? A ? B ?), nil
+      iex> Gcj.R1A.Problem1.fill_line ~w(? ? ? A ? B ?), nil
       ~w(A A A A A B B)
   """
 
@@ -67,13 +67,13 @@ defmodule Gcj.R1.Problem1 do
 
   @doc ~S"""
   ## Examples
-      iex> Gcj.R1.Problem1.first_letter ~w()
+      iex> Gcj.R1A.Problem1.first_letter ~w()
       "?"
-      iex> Gcj.R1.Problem1.first_letter ~w(? ?)
+      iex> Gcj.R1A.Problem1.first_letter ~w(? ?)
       "?"
-      iex> Gcj.R1.Problem1.first_letter ~w(? ? A)
+      iex> Gcj.R1A.Problem1.first_letter ~w(? ? A)
       "A"
-      iex> Gcj.R1.Problem1.first_letter ~w(? ? A B)
+      iex> Gcj.R1A.Problem1.first_letter ~w(? ? A B)
       "A"
   """
   def first_letter([]), do: "?"
@@ -82,15 +82,15 @@ defmodule Gcj.R1.Problem1 do
 
   @doc ~S"""
   ## Examples
-      iex> Gcj.R1.Problem1.fill_empty_lines [~w()], nil
+      iex> Gcj.R1A.Problem1.fill_empty_lines [~w()], nil
       [~w()]
-      iex> Gcj.R1.Problem1.fill_empty_lines [~w(? ?), ~w(A B)], nil
+      iex> Gcj.R1A.Problem1.fill_empty_lines [~w(? ?), ~w(A B)], nil
       [~w(A B), ~w(A B)]
-      iex> Gcj.R1.Problem1.fill_empty_lines [~w(? ?), ~w(A B), ~w(? ?)], nil
+      iex> Gcj.R1A.Problem1.fill_empty_lines [~w(? ?), ~w(A B), ~w(? ?)], nil
       [~w(A B), ~w(A B), ~w(A B)]
-      iex> Gcj.R1.Problem1.fill_empty_lines [~w(? ?), ~w(A B), ~w(C D)], nil
+      iex> Gcj.R1A.Problem1.fill_empty_lines [~w(? ?), ~w(A B), ~w(C D)], nil
       [~w(A B), ~w(A B), ~w(C D)]
-      iex> Gcj.R1.Problem1.fill_empty_lines [~w(? ?), ~w(A B), ~w(? ?), ~w(C D), ~w(? ?)], nil
+      iex> Gcj.R1A.Problem1.fill_empty_lines [~w(? ?), ~w(A B), ~w(? ?), ~w(C D), ~w(? ?)], nil
       [~w(A B), ~w(A B), ~w(A B), ~w(C D), ~w(C D)]
   """
 
